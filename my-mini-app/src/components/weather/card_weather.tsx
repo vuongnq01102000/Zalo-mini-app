@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Box, Header, List, Swiper, Tabs, Text } from "zmp-ui";
-import { WeatherComponent } from "./WeatherComponent";
+
 
 
 const listCountry = [
@@ -68,7 +68,7 @@ export const CardWeather = () => {
                            <Box flex justifyContent="center">
                             <Text.Title>{it.name}</Text.Title>
                            </Box>
-                            <WeatherComponent locationName = {valueLocationName}></WeatherComponent>
+                          
                            </Tabs.Tab>
                         ))}
                     </Tabs>

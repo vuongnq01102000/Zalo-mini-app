@@ -11,6 +11,7 @@ import "zmp-ui/zaui.css";
 // Your stylesheet
 import "css/app.scss";
 import "css/news_card.scss"
+import "css/weather/weather_style.scss"
 
 // Expose app configuration
 import appConfig from "../app-config.json";

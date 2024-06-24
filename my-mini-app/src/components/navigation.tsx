@@ -11,8 +11,8 @@ const tabs :  Record<string, Menu> = {
         icon: <Icon icon="zi-home"/>,
     },
     
-    '/about': {
-        label: "About",
+    '/weather': {
+        label: "Weather",
         icon: <Icon icon="zi-info-circle"/>,
     },
     '/post': {

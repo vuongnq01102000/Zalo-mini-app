@@ -1,18 +1,17 @@
 {
   "app": {
-    "title": "my-mini-app",
-    "headerTitle": "zmp-blank-templates",
-    "headerColor": "#1843EF",
+    "title": "Space Pet",
+    "headerTitle": "Space",
     "textColor": "white",
     "textAlign": "left",
-    "statusBarColor": "#1843EF",
-    "leftButton": "back",
-    "statusBar": "normal",
+    "leftButton": "none",
+    "statusBar": "transparent",
     "actionBarHidden": false,
     "hideAndroidBottomNavigationBar": false,
-    "hideIOSSafeAreaBottom": false
+    "hideIOSSafeAreaBottom": false,
+    "showBackIcon" : false
   },
-  "debug": false,
+  "debug": true,
   "pages": [],
   "listCSS": [],
   "listSyncJS": [],

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Avatar, Box, Button, Icon, Sheet, Swiper,Text } from "zmp-ui";
+import { Avatar, Box, Button, Icon, ImageViewer, Sheet, Swiper,Text } from "zmp-ui";
 import { NewsCardProps} from "types/NewsItem";
 
 
@@ -37,7 +37,7 @@ const  NewsCard: React.FunctionComponent<NewsCardProps> = ({item}) =>   {
     const [sheetVisible, setSheetVisible] = useState(false);
 
     return (
-        <Box p={2} className="newsCard" >
+        <Box className="newsCard" >
 
            {/*  header card news */}
            <Box flex  = {true}  flexDirection="row" flexWrap={true} alignItems="center" pb={3}>
@@ -53,7 +53,8 @@ const  NewsCard: React.FunctionComponent<NewsCardProps> = ({item}) =>   {
                
                    {item.listImg?.map((imgUrl: string, index: React.Key) => (
                      <Swiper.Slide key={item.id}>
-                    <img src={imgUrl} alt={ "Img" + index}  className='slide-img'/>
+                    <img src={imgUrl} alt={ "Img" + index}  className='imgNews'  />
+                 
                     </Swiper.Slide>
                    ))}
               

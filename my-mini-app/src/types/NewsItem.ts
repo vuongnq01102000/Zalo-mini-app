@@ -2,10 +2,10 @@
 
 export interface NewsItem {
     id: number;
-    fullName: string,
-    avatar: string,
-    content?: string;
-    listImg?: Array<String>;
+    fullName: string;
+    avatar: string;
+    content: string;
+    listImg: Array<String>;
 }
 
 

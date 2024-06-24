@@ -6,8 +6,10 @@ import {Box } from "zmp-ui";
 import HomePage from "pages/index";
 import UserPage from "pages/user";
 import { Navigation } from "./navigation";
-import AboutPage from "pages/about";
-import NewsPage from "pages/news";
+import { PostPage } from "pages/post";
+import { WeatherPage } from "pages/weather";
+
+
 
 
 export const Layout : FC = () => {
@@ -17,8 +19,8 @@ export const Layout : FC = () => {
                 <Routes>
                     <Route path="/" element = {<HomePage/>}></Route>
                     <Route path="/user" element = {<UserPage/>}></Route>
-                    <Route path="/about" element = {<AboutPage/>}></Route>
-                    <Route path="/post" element = {<NewsPage/>}></Route>
+                    <Route path="/weather" element = {<WeatherPage/>}></Route>
+                    <Route path="/post" element = {<PostPage/>}></Route>
                 </Routes>
                 <Navigation/>
         </Box>

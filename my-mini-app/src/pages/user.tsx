@@ -55,6 +55,11 @@ const UserPage = () => {
             <List.Item title="Name" subTitle={user.name} />
             <List.Item title="Display Name" subTitle={displayName} />
             <List.Item title="ID" subTitle={user.id} />
+            <List.Item  title="Sign Out"  
+              prefix = {<Icon icon="zi-leave"/>}
+              className="btnSignOut"
+              
+            />
           </List>
         </div>
       </Box>

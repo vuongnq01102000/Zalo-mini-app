@@ -18,7 +18,6 @@ import appConfig from "../app-config.json";
 if (!window.APP_CONFIG) {
   window.APP_CONFIG = appConfig;
 }
-
 // Mount the app
 import App from "components/app";
 const root = createRoot(document.getElementById("app")!);

@@ -1,5 +1,5 @@
 
-import React ,{Suspense, useEffect, useRef, useState} from "react";
+import React ,{ useEffect, useState} from "react";
 import {  useRecoilValue } from "recoil";
 import { displayNameState, userState } from "state";
 import { Avatar, Box, Button, Input, Page, SnackbarProvider, Text, useSnackbar } from "zmp-ui";
@@ -9,7 +9,7 @@ export const PostPage = () => {
 
     const { userInfo: user } = useRecoilValue(userState);
     const [txtValue, setTxtValue] = useState("");
-    const { openSnackbar, setDownloadProgress, closeSnackbar } = useSnackbar();
+    const { openSnackbar, closeSnackbar } = useSnackbar();
 
 
     useEffect(
@@ -18,17 +18,17 @@ export const PostPage = () => {
         },
         []
       );
-      
+      if (!user) {
+        return <Text>Error: User not found</Text>;
+      }
     return (
         <Page className="initPostPage">
-            <Suspense>
-                <Box flex flexDirection="row" alignContent="center">
-                    <Avatar src={user.avatar} online></Avatar>
-                    <Box pl= {2}>
-                    <Text.Title>{user.name}</Text.Title>
-                    </Box>
-                </Box>
-            </Suspense>
+            <Box flex flexDirection="row" alignItems="center">
+        <Avatar src={user.avatar} online />
+        <Box pl={2}>
+          <Text.Title>{user.name}</Text.Title>
+        </Box>
+      </Box>
 
             <Box p = {2} >
                 <Input.TextArea placeholder="Write contents here..." 
@@ -40,26 +40,24 @@ export const PostPage = () => {
                 </Input.TextArea>
                 <Box height={10}></Box>
                 <Button fullWidth = {true} onClick={() => {
-                   if (txtValue.length == 0) {
+                  if (txtValue.length === 0) {
                     openSnackbar({
-                        
-                        text: txtValue,
-                        type:"error",
-                        duration: 1000
-                      });
-                   }else {
+                      text: "Content cannot be empty",
+                      type: "error",
+                      duration: 1000,
+                    });
+                  } else {
                     openSnackbar({
-                        
-                        text: txtValue,
-                        type: "success",
-                        duration: 1000
-                      });
-                   }
+                      text: "Content posted successfully",
+                      type: "success",
+                      duration: 1000,
+                    });
+                  }
                 }}>
                     <Text.Title>Post</Text.Title>
                 </Button>
             </Box>
-            <SnackbarProvider  >
+            <SnackbarProvider>
 
             </SnackbarProvider>
         </Page>

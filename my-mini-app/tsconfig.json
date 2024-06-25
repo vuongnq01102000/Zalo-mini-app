@@ -34,8 +34,10 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "types": [
-      "vite/client"
+      "vite/client",
+      "node",
     ],
+    
     "baseUrl": "src"
   },
   "exclude": [
